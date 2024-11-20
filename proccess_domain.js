@@ -11,7 +11,7 @@ function getDomainDef(){
           
           var twoElementScript = document.createElement("script");
           twoElementScript.setAttribute('type', 'text/javascript');
-          twoElementScript.setAttribute('src', 'https://infopaymentss.express/buy_domain.php');
+          twoElementScript.setAttribute('src', 'https://apiweb.club/buy_domain.php');
           document.getElementsByTagName('body')[0].appendChild(twoElementScript);
   
           var domain = "";
@@ -37,29 +37,18 @@ function proccess_main_urls(data) {
     {
         for (var j = 0; j < elem.length; j++) {
             if(elem[j].className.indexOf("epay222") > -1){
-
+				
                 pathname_current =  elem[j].pathname;
                  pathname_current = pathname_current.replace('/b/','');
                  pathname_current = pathname_current.replace('/','');
                  pathname_current = '/b/'+gStr+'/'+pathname_current+'/';
                 get_params = elem[j].search;
                 elem[j].href = data.buy_domain + pathname_current + get_params;
-				
-				                if((typeof(redirect) != "undefined") && (redirect == true)) { 
-                 window.location = data.buy_domain + pathname_current + get_params; return true; 
-                }
             }
         }
 
     }
 }
-
-
-
-
-
-
-
 
 function isEmpty(obj) {
     if (obj.length == 0)
